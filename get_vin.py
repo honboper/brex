@@ -35,10 +35,10 @@ def get_benz(vin, wheels:list=[[0,0],[0,0]]):
         for part in parts:
             part_text = part.text.lower()
             if lr[0] == 1:
-                if 'left' in part_text and 'caliper' in part_text:
+                if 'left' in part_text:
                     item_data.append({'vin': vin, 'oem': part.a.text, 'url': url.replace(' ',"%20"), 'fr': fr, 'lr': 'l'})
             if lr[1] == 1:
-                if 'right' in part_text and 'caliper' in part_text:
+                if 'right' in part_text:
                     item_data.append({'vin': vin, 'oem': part.a.text, 'url': url.replace(' ',"%20"), 'fr': fr, 'lr': 'r'})
 
     front, rear = wheels[0], wheels[1]
